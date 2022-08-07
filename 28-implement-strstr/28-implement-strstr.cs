@@ -6,13 +6,9 @@ public class Solution {
             return 0;
         
         if(haystack.Contains(needle)) {
-            for(int i=0; i<haystack.Length-needle.Length+1; i++){
-                if(haystack.Substring(i, needle.Length) == needle){
-                    return i;
-                }
-            }
+            return haystack.IndexOf(needle);
         }
-        
+
         return -1;
     }
 }

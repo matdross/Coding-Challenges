@@ -12,6 +12,7 @@ public class Solution {
         
         while(right > left + 1) {
             int middle = (left + right) / 2;
+            if(nums[middle] == target) return middle;
             if (nums[middle] >= target)
                 right = middle;
             else

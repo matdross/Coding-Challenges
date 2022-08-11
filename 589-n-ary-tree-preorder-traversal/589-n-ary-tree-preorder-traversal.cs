@@ -31,6 +31,7 @@ public class Solution {
             Node node = stack.Pop();
             list.Add(node.val);
             int count = node.children.Count - 1;
+            //reverse the nodes
             for (int i = count; i >= 0; i--)
             {
                 Node child = node.children[i];

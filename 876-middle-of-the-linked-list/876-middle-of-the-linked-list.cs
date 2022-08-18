@@ -9,27 +9,20 @@
  *     }
  * }
  */
+
+//O(n) time with O(1) space
 public class Solution {
     public ListNode MiddleNode(ListNode head) {
         
         if(head == null) return null;
         
-        var count = 0.0;
-        var cur = head;        
+        ListNode slow = head, fast = head;
         
-        while(cur.next != null) {
-            cur = cur.next;
-            count += 1;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
         
-        count = count / 2; 
-
-        cur = head;
-        
-        for(int i = 0; i < count; i++) {  
-            cur = cur.next;
-        }
-        
-        return cur;
+        return slow;
     }
 }
